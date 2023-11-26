@@ -337,6 +337,7 @@ GameObject:
   - component: {fileID: 408661404}
   - component: {fileID: 408661403}
   - component: {fileID: 408661402}
+  - component: {fileID: 408661405}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -407,7 +408,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 408661403}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 408661405}
+        m_TargetAssemblyTypeName: UpgradeClick, Assembly-CSharp
+        m_MethodName: UpgrateClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &408661403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -446,6 +459,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408661400}
   m_CullTransparentMesh: 1
+--- !u!114 &408661405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408661400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ba050055002234abf124d6e52dc0b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _upgradeCost: 10
+  _gameManager: {fileID: 475520357}
+  upgradeScoreText: {fileID: 100130353}
 --- !u!1 &412075862
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +806,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 475520359}
-  - component: {fileID: 475520358}
   - component: {fileID: 475520357}
   m_Layer: 0
   m_Name: GameManager
@@ -800,22 +827,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _score: 0
-  clickCost: 1
-  scoreTMPro: {fileID: 100130353}
---- !u!114 &475520358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 475520356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44aa6b494a2c96b42a27e4f3ec68fd36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _upgradeClick: 10
-  upgradeScoreText: {fileID: 527099156}
+  _clickCost: 1
+  _upgradeClick: {fileID: 408661405}
+  scoreTMPro: {fileID: 527099156}
 --- !u!4 &475520359
 Transform:
   m_ObjectHideFlags: 0
@@ -842,7 +856,7 @@ GameObject:
   - component: {fileID: 504722238}
   - component: {fileID: 504722239}
   m_Layer: 0
-  m_Name: Window_54
+  m_Name: WindowForScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -926,8 +940,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1009,35 +1021,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91754dbe52452f24abd92a38f6203e9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _score: 0
-  clickCost: 1
-  scoreTMPro: {fileID: 527099156}
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44aa6b494a2c96b42a27e4f3ec68fd36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _upgradeClick: 10
-  upgradeScoreText: {fileID: 100130353}
 --- !u!1 &527099154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1051,7 +1034,7 @@ GameObject:
   - component: {fileID: 527099156}
   - component: {fileID: 527099158}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1237,6 +1220,7 @@ GameObject:
   - component: {fileID: 581045143}
   - component: {fileID: 581045142}
   - component: {fileID: 581045141}
+  - component: {fileID: 581045144}
   m_Layer: 5
   m_Name: Character
   m_TagString: Untagged
@@ -1307,7 +1291,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420033}
+      - m_Target: {fileID: 475520357}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: Click
         m_Mode: 1
@@ -1357,6 +1341,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 581045138}
   m_CullTransparentMesh: 1
+--- !u!50 &581045144
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581045138}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1475537464
 GameObject:
   m_ObjectHideFlags: 0
