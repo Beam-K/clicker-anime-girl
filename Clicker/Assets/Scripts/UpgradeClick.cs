@@ -1,18 +1,29 @@
 using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class UpgradeClick : MonoBehaviour
 {
-    [SerializeField] private int _upgradeCost = 10;
+    [SerializeField] private static int _upgradeCost = 10;
     [SerializeField] private GameManager _gameManager;
     private int _score;
     private int _clickCost;
     
     [SerializeField] private TMP_Text upgradeScoreText;
 
-     public event Action OnUpgrade;
+    public event Action OnUpgrade;
+     
+    [SerializeField] private Button UpgradeClickCost;
+
+    private void Start()
+    {
+        Button btn = UpgradeClickCost.GetComponent<Button>();
+        btn.onClick.AddListener(UpgrateClick);
+        
+       
+  
+    }
     public void ShowUpgradeScoreCost()
     {
         upgradeScoreText.text = _upgradeCost.ToString();

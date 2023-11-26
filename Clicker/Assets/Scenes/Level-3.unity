@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 417374267}
   - component: {fileID: 417374266}
   m_Layer: 0
-  m_Name: Background_3
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -655,7 +655,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: ab9a4deef6f110b4ba27d297f6898485, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7eb8cb5d13b3b3241a1319972d874a78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -675,8 +675,8 @@ Transform:
   m_GameObject: {fileID: 417374265}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0001, y: 0.0153, z: 0}
-  m_LocalScale: {x: 0.8110069, y: 0.9527869, z: 1}
+  m_LocalPosition: {x: 0.0001, y: 0.0022, z: 0}
+  m_LocalScale: {x: 0.8110069, y: 0.96276563, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb9eecd3765fc084c854b2f26c30f6f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c306fe76e635a44aab6179b0184283d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1642,7 +1642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: " \u043D\u043E\u0432\u044B\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
+  m_text: "\u043A\u043E\u043D\u0435\u0446"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

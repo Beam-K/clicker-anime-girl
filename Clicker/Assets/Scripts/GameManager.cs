@@ -1,17 +1,27 @@
+
 using System;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private int _score ; 
-    [SerializeField] private int _clickCost = 1;
+    [SerializeField] private static int _score ; 
+    [SerializeField] private static int _clickCost = 1;
     [SerializeField] private UpgradeClick _upgradeClick;
 
     [SerializeField] private TMP_Text scoreTMPro;
 
+    [SerializeField] private Button Character;
+
+    private void Start()
+    {
+        Button btn = Character.GetComponent<Button>();
+        btn.onClick.AddListener(Click);
+        
+        ShowScoreTMP();
+    }
     private void OnEnable()
     {
         _upgradeClick.OnUpgrade += UpdateValue;
@@ -31,7 +41,7 @@ public class GameManager : MonoBehaviour
     public void ShowScoreTMP()
     {
         scoreTMPro.text = _score.ToString();
-    }
+    } 
  public void UpdateValue()
  {
      _score = _upgradeClick.GiveScore();
